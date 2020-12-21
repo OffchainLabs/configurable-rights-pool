@@ -24,6 +24,7 @@
     "homepage": "https://github.com/balancer-labs/configurable-rights-pool#readme",
     "devDependencies": {
         "@openzeppelin/test-helpers": "^0.5.5",
+        "arb-ethers-web3-bridge": "^0.7.3",
         "chai": "^4.2.0",
         "coveralls": "^3.0.8",
         "eslint": "^6.7.1",

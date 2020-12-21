@@ -1,3 +1,9 @@
+const wrapProvider = require('arb-ethers-web3-bridge').wrapProvider
+const HDWalletProvider = require('@truffle/hdwallet-provider')
+
+const mnemonic = "0xffb2b26161e081f0cdf9db67200ee0ce25499d5ee683180a9781e6cceb791c39"
+const arbProviderUrl = 'http://localhost:8547/'
+
 module.exports = {
     networks: {
         development: {
@@ -6,6 +12,16 @@ module.exports = {
             network_id: '*', // Any network (default: none)
             gas: 10000000,
         },
+        arbitrum: {
+            provider: function () {
+              // return wrapped provider:
+              return wrapProvider(
+                new HDWalletProvider(mnemonic, arbProviderUrl)
+              )
+            },
+            network_id: '*',
+            gasPrice: 0,
+          },
         coverage: {
             host: 'localhost',
             network_id: '*',

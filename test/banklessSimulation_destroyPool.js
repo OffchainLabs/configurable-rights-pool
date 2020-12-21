@@ -109,7 +109,7 @@ contract('Bankless Simulation (destroy pool)', async (accounts) => {
         await crpPool.createPool(toWei(numPoolTokens), 10, 10);
     });
 
-    it('crpPool should have correct rights set', async () => {
+    it.only('crpPool should have correct rights set', async () => {
         let x;
         for (x = 0; x < permissions.length; x++) {
             const perm = await crpPool.hasPermission(x);
